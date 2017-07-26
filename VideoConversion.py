@@ -5,7 +5,10 @@ Created on 24 jul. 2017
 '''
 import os
 import Config
+import sys
 import ProgressConversion
+from subprocess import Popen, PIPE, STDOUT
+
 
 def progress(count, total):
     bar_len = 10
@@ -49,8 +52,8 @@ def yuv_to_mp4():
     CubeFaceWidth = str(3 * CodingFaceWidth)
     CubeFaceHeight = str(2 * CodingFaceHeight)
     
-    input_source = Config.TempFolder + "/" + Config.source_name + "_" + CubeFaceWidth + "x" + CubeFaceHeight + "cf1.yuv"
-    output_yuv = Config.TempFolder + "/" + Config.source_name + "_cubemap32"
+    input_source = Config.TempFolder + "/" + Config.source_name + "_" + CubeFaceWidth + "x" + CubeFaceHeight + "x8_cf1"
+    output_yuv = Config.OutputTransformationFolder + "/" + Config.source_name + "_cubemap32"
     
     cmd = " ffmpeg -f rawvideo"
     cmd += " -s:v %sx%s" % (CubeFaceWidth,CubeFaceHeight) 

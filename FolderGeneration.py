@@ -59,9 +59,9 @@ def OutputMainFolders(PremierXml,OutputFileFullPath):
 #===============================================================================
 # Remove temporale files and directories
 #===============================================================================
-# def RemoveTempsVideos():
-#     '''
-#     Remove the Temp Folders
-#     '''
-#     print("Remove temp files:" + Config.OuputhPath + "/" + Config.PremierProjectName + "/" + "Temp_dash")
-#     shutil.rmtree(Config.OuputhPath + "/" + Config.PremierProjectName + "/" + "Temp_dash")
+def RemoveTempsFolder():
+    '''
+    Remove the Temp Folders
+    '''
+    print("Remove temp files:" + Config.TempFolder)
+    shutil.rmtree(Config.TempFolder)

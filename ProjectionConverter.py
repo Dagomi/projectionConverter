@@ -26,7 +26,7 @@ parser.add_argument('-i','--InputFileFullPath')
 ##OutputFileFullPath: Output of the Dasher\n
 parser.add_argument('-o','--OutputFileFullPath')
 ##JobId: Id of the job (webserver variable)\n
-parser.add_argument('-f','--FramesToBeEncoded')
+parser.add_argument('-f','--FramesToBeEncoded',help= "Number od frames to encode, 0 encode all frames", required =True)
 
 args = parser.parse_args()
 
@@ -62,3 +62,7 @@ class ProjectionConverter:
         elapsedTime = time.time() - startTime
         print("-> Transformation yuv_to_mp4 done" )
         print("-> Total time elapsed: " + time.strftime('%H:%M:%S', time.gmtime(elapsedTime)))
+        #=======================================================================
+        # Remove Temp
+        #=======================================================================
+        FolderGeneration.RemoveTempsFolder()
